@@ -10,6 +10,7 @@ require("dotenv").config();
 
 // app
 const app = express();
+app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
 
 // DB Connection
 mongoose
@@ -17,10 +18,12 @@ mongoose
 .then(() => console.log("DB connected"))
 .catch((err) => console.log("DB Error => ", err));
 
+
 // middlewares
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
+
 
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
