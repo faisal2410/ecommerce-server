@@ -23,6 +23,9 @@
     "nodemon": "^2.0.15",
     "slugify": "^1.6.5",
     "sslcommerz-lts": "^1.1.0",
-    "uniqueid": "^1.0.0"
+    "uniqueid": "^1.0.0",
+    "formidable": "^1.2.1",  
+    "string-strip-html": "^4.1.1",
+    "lodash": "^4.17.21"
   }
 }
